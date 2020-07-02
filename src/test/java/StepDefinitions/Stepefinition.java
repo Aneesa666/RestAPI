@@ -77,6 +77,7 @@ public class Stepefinition extends Utils{
 	public void verify_place_id_created_maps_to_using(String expectedname, String resource) throws IOException {
 	    // Write code here that turns the phrase above into concrete actions
 		place_id = getJsonPath(response,"place_id");
+		system.out.println(place_id);
 		res = given().spec(requestSpecification()).queryParam("place_id", place_id);
 		user_calls_with_http_request(resource, "GET");
 		String actualname = getJsonPath(response,"name");
